@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: whitesmoke;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 60vw;
+        height: 100vh;
+        margin: auto;
+        border: 3px solid red;
+        /* 1. Ubah display pembungkus semua element menjadi grid */
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "aside main"
+          "nav main"
+          "footer footer";
+        /* 2. Tentukan lebar kolom template dengan satuan fr*/
+        grid-template-columns: 1fr 2.5fr;
+        /* 3. Tentukan lebar baris template dengan satuan fr*/
+        grid-template-rows: 1fr 1fr 3fr 0.5fr;
+      }
+
+      header {
+        background-color: royalblue;
+        /* 4.1. Beri identitas grid area pada header */
+        grid-area: header;
+      }
+
+      aside {
+        background-color: orange;
+        /* 4.2. Beri identitas grid area pada aside */
+        grid-area: aside;
+      }
+
+      nav {
+        background-color: blueviolet;
+        /* 4.3. Beri identitas grid area pada nav */
+        grid-area: nav;
+      }
+
+      main {
+        background-color: salmon;
+        /* 4.4. Beri identitas grid area pada main */
+        grid-area: main;
+      }
+
+      footer {
+        background-color: gray;
+        /* 4.5. Beri identitas grid area pada footer */
+        grid-area: footer;
+      }
+
+      /* Center content semua element dengan flex*/
+      header,
+      aside,
+      nav,
+      main,
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <aside>Aside</aside>
+      <nav>Nav</nav>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

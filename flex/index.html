@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: whitesmoke;
+      }
+
+      .container {
+        width: 600px;
+        margin: 20px auto;
+        background-color: red;
+      }
+
+      header {
+        background-color: blue;
+        padding: 20px 0;
+      }
+
+      aside {
+        height: 80px;
+        background-color: orange;
+      }
+
+      nav {
+        height: 140px;
+        background-color: blueviolet;
+      }
+
+      main {
+        background-color: salmon;
+        height: 220px;
+      }
+
+      footer {
+        background-color: gray;
+        padding: 10px 0;
+      }
+
+      .content {
+        display: flex; /* 1. Ubah display pembungkus content menjadi flex  */
+      }
+
+      .sidebar {
+        flex: 1; /* 2. Atur ukuran flex sidebar (pembungkus aside dan nav */
+      }
+
+      main {
+        flex: 2.5; /* 3. Atur ukuran flex main */
+        width: 60%;
+      }
+
+      .content {
+        border: 3px solid red;
+      }
+
+      /* Center content semua element */
+      header,
+      aside,
+      nav,
+      main,
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <div class="content">
+        <div class="sidebar">
+          <aside>Aside</aside>
+          <nav>Nav</nav>
+        </div>
+        <main>Main</main>
+      </div>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
